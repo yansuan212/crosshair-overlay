@@ -7,7 +7,20 @@ Windows 桌面正中央的一个**红色圆点**，覆盖在游戏画面上，�
 
 ---
 
-## 一、两个方案，任选其一
+## 一、直接下载（推荐）
+
+不想自己编译的话，直接去 [**Releases 页面**](https://github.com/yansuan212/crosshair-overlay/releases/latest) 下载现成的：
+
+| 压缩包 | 说明 |
+|---|---|
+| `Crosshair-SchemeA-CSharp-v1.0.0.zip` | **方案 A**，exe **18.9 KB**，依赖系统自带的 .NET Framework 4.8 |
+| `Crosshair-SchemeD-PureC-v1.0.0.zip` | **方案 D**，exe **55 KB**，**零运行时依赖**，另含热键占用探测工具 |
+
+解压后双击 exe 即可运行，首次启动会在同目录自动生成配置文件。
+
+---
+
+## 二、两个方案，任选其一
 
 本仓库包含两份**完全独立、互不干扰**的实现，功能一致，都是「屏幕中央一个红色圆点」。
 选哪个都行，看你更在意什么：
@@ -31,7 +44,7 @@ Windows 桌面正中央的一个**红色圆点**，覆盖在游戏画面上，�
 
 ---
 
-## 二、快速开始
+## 三、快速开始
 
 两个方案的用法完全一样：
 
@@ -84,7 +97,7 @@ monitor=0        # 显示器序号
 
 ---
 
-## 三、自己编译
+## 四、自己编译
 
 ### 方案 A（C#）
 
@@ -105,7 +118,7 @@ g++ -O2 -s -municode -mwindows -o crosshair.exe src\crosshair.cpp ^
 
 ---
 
-## 四、不用眼睛看也能验证画对了
+## 五、不用眼睛看也能验证画对了
 
 两个方案都内置**自检模式**：不创建窗口、不抢焦点，纯内存渲染后导出图片和报告。
 
@@ -121,7 +134,7 @@ g++ -O2 -s -municode -mwindows -o crosshair.exe src\crosshair.cpp ^
 
 ---
 
-## 五、技术要点
+## 六、技术要点
 
 1. **窗口样式四件套**：`WS_EX_LAYERED`（分层透明）+ `WS_EX_TRANSPARENT`（鼠标穿透）
    + `WS_EX_TOPMOST`（置顶）+ `WS_EX_TOOLWINDOW`（不出现在 Alt+Tab）
@@ -139,7 +152,7 @@ g++ -O2 -s -municode -mwindows -o crosshair.exe src\crosshair.cpp ^
 
 ---
 
-## 六、已知限制
+## 七、已知限制
 
 - ⚠️ **独占全屏（Exclusive Fullscreen）模式下红点不可见** —— 这是 Windows 架构限制，
   所有同类工具都一样。请把游戏设为**无边框窗口 / 窗口模式**。
@@ -150,7 +163,7 @@ g++ -O2 -s -municode -mwindows -o crosshair.exe src\crosshair.cpp ^
 
 ---
 
-## 七、目录结构
+## 八、目录结构
 
 ```
 准星/
