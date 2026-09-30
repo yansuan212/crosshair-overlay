@@ -1,0 +1,15 @@
+# 含中文的 .bat 是 GBK 编码，必须禁止 git 做任何换行 / 编码转换，
+# 否则中文提示会乱码、命令被拆断（这在本项目里踩过）。
+*.bat -text
+
+# 编译产物按二进制处理
+*.exe binary
+
+# 源码与文档统一按 UTF-8 处理（仓库内存储为 LF）
+*.c     text eol=lf
+*.cpp   text eol=lf
+*.cs    text eol=lf
+*.csproj text eol=lf
+*.manifest text eol=lf
+*.md    text eol=lf
+*.ini   -text
